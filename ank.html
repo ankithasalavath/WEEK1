@@ -1,0 +1,67 @@
+
+
+week12
+
+
+pip install Django
+
+python -m django startproject xxxxx
+
+cd xxxxx
+
+python manage.py startapp yyyyy
+
+pip install Djangorestframework
+
+
+
+
+open vs code
+
+xxxxx/settings.py
+
+installed-app
+
+add  'yyyyy',
+        'rest_framework',
+
+
+
+
+
+
+
+yyyyy/admin.py
+
+from django.contrib import admin
+from .models import StudentModel
+
+admin.site.register(StudentModel)
+
+
+yyyyy/models.py
+
+from django.db import models
+class StudentModel(models.Model):
+    name=models.CharField(max_length=50)
+    dept=models.CharField(max_length=50)
+    roll=models.IntegerField()
+
+    def __str__(self):
+        return self.name
+# Create your models here.
+
+
+
+
+
+run application
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py createsuperuser
+python manage.py runserver
+
+
